@@ -1,6 +1,7 @@
 import 'package:number_format_ext/number_format_ext.dart';
 import 'package:decimal/decimal.dart';
 import 'package:intl/intl.dart';
+import 'package:rational/rational.dart';
 
 void main() {
   final f22 = NumberFormat.decimalPattern();
@@ -11,6 +12,10 @@ void main() {
 
   f28.minimumFractionDigits = 2;
   f28.maximumFractionDigits = 8;
+
+  final rational = Rational.parse('1.999999');
+  // formater can't format Rational, please use formatWithCondition
+  // print(f22.format(rational));
 
   /// !!!
   /*
